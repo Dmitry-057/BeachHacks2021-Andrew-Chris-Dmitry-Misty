@@ -38,9 +38,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="Floor")
+        if(collision.gameObject.tag == "Floor")
         {
             inAir = false;
+            if (collision.gameObject.name.Equals("long-platform")) {
+                this.transform.parent = collision.transform;
+            }
             Debug.Log("In Air = ");
         }
     }
