@@ -16,7 +16,7 @@ public class PlatformSpawner : MonoBehaviour
 
     private void spawnPlatform() {
         GameObject platform = Instantiate(platformPrefab) as GameObject;
-        platform.transform.position = new Vector2(screenBounds.x, Random.Range(-screenBounds.y, screenBounds.y));
+        platform.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y, screenBounds.y));
     }
 
     IEnumerator platformWave() {
