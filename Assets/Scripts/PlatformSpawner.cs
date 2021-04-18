@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlatformSpawner : MonoBehaviour
 {
     public GameObject platformPrefab;
+    public GameObject crabPrefab;
     public float respawnTime;
     private Vector2 screenBounds;
     //public GameObject player;
@@ -18,8 +19,10 @@ public class PlatformSpawner : MonoBehaviour
     }
 
     private void spawnPlatform() {
+        GameObject crab = Instantiate(crabPrefab) as GameObject; 
         GameObject platform = Instantiate(platformPrefab) as GameObject;
         platform.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-3.0f, -1.0f));
+        crab.transform.position = new Vector2(platform.transform.position.x, platform.transform.position.y + .7f);
         //Debug.Log(player.transform.position.x);
     }
 

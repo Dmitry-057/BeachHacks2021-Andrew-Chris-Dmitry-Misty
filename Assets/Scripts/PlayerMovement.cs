@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,10 +34,11 @@ public class PlayerMovement : MonoBehaviour
             inAir = true;
             Debug.Log("In Air = true");
         }
-        Debug.Log(ourPlayer.transform.position.y);
         if (ourPlayer.transform.position.y < -4.0f) {
-            Debug.Log("exit test");
-            Debug.Break();
+            SceneManager.LoadScene("Game");
+        }
+        if (ourPlayer.transform.position.x < -3.0f) {
+            SceneManager.LoadScene("Game");
         }
     }
 
@@ -45,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Floor")
         {
             inAir = false;
-            if (collision.gameObject.name.Contains("long-platform") /*|| collision.gameObject.name.Contains("starting")*/) {
+            if (collision.gameObject.name.Contains("long-platform")) {
                 this.transform.parent = collision.transform;
             }
             Debug.Log("In Air = ");
