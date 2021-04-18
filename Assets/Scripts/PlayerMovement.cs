@@ -33,7 +33,11 @@ public class PlayerMovement : MonoBehaviour
             inAir = true;
             Debug.Log("In Air = true");
         }
-        
+        Debug.Log(ourPlayer.transform.position.y);
+        if (ourPlayer.transform.position.y < -4.0f) {
+            Debug.Log("exit test");
+            Debug.Break();
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
