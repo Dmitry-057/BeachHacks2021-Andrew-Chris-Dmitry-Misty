@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Floor")
         {
             inAir = false;
-            if (collision.gameObject.tag == "long-platform") {
+            if (collision.gameObject.name.Contains("long-platform") /*|| collision.gameObject.name.Contains("starting")*/) {
                 this.transform.parent = collision.transform;
             }
             Debug.Log("In Air = ");
