@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 3281662807755453004, guid: a7c0fdab9b3770b49ae88b06ad3bfe8e, type: 3}
+  crabPrefab: {fileID: 7581668865933285152, guid: b67002d3fb245fb428f5820cc64a9091, type: 3}
   respawnTime: 1
